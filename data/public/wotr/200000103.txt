@@ -1,0 +1,234 @@
+[Inclosure Numbers 3.]
+
+Numerical list of casualties in the Cavalry Corps during expedition of General Kilpatrick to Richmond.
+
+Killed. Wounded.
+
+Command. 	 Officers	 Men. 	 Officers	 Men
+
+
+
+First
+
+Division:
+
+
+
+3rd	 --	 1	 --	 --
+
+Indiana
+
+Cavalry
+
+
+
+4th New	 --	 --	 --	 --
+
+York
+
+Cavalry
+
+
+
+17th	 --	 --	 --	 1
+
+Pennsylvan
+
+ia Cavalry
+
+
+
+Second
+
+Division:
+
+
+
+1st Maine	 --	 1	 --	 2
+
+Cavalry
+
+
+
+16th	 --	 --	 --	 --
+
+Pennsylvan
+
+ia
+
+
+
+4th	 --	 --	 --	 --
+
+Pennsylvan
+
+ia Cavalry
+
+
+
+Third
+
+Division:
+
+
+
+2nd New	 --	 3	 --	 --
+
+York
+
+Cavalry
+
+
+
+5th New	 --	 --	 --	 2
+
+York
+
+Cavalry
+
+
+
+18th	 --	 --	 --	 1
+
+Pennsylvan
+
+ia Cavalry
+
+
+
+5th	 --	 --	 --	 2
+
+Michigan
+
+Cavalry
+
+
+
+6th	 --	 --	 --	 --
+
+Michigan
+
+Cavalry
+
+
+
+7th	 --	 --	 --	 --
+
+Michigan
+
+Cavalry
+
+
+
+1st	 --	 1	 --	 4
+
+Vermont
+
+Cavalry
+
+
+
+Total	 --	 6	 --	 12
+
+Missing
+
+Command. 	 Officers	 Men	 Aggregate
+
+
+
+First Division:
+
+
+
+3rd Indiana	 --	 2	 3
+
+Cavalry
+
+
+
+4th New York	 --	 2	 2
+
+Cavalry
+
+
+
+17th Pennsylvania	 --	 --	 1
+
+Cavalry
+
+
+
+Second Division:
+
+
+
+1st Maine Cavalry	 --	 48	 51
+
+
+
+16th Pennsylvania	 --	 1	 1
+
+
+
+4th Pennsylvania	 --	 4	 4
+
+Cavalry
+
+
+
+Third Division:
+
+
+
+2nd New York	 2	 66	 71
+
+Cavalry
+
+
+
+5th New York	 1	 20	 23
+
+Cavalry
+
+
+
+18th Pennsylvania	 --	 2	 3
+
+Cavalry
+
+
+
+5th Michigan	 1	 47	 50
+
+Cavalry
+
+
+
+6th Michigan	 --	 5	 5
+
+Cavalry
+
+
+
+7th Michigan	 3	 41	 44
+
+Cavalry
+
+
+
+1st Vermont	 --	 72	 77
+
+Cavalry
+
+
+
+Total	 7	 310	 335
+
+HEADQUARTERS CAVALRY CORPS, March 30, 1864.
+
+D. McM. GREGG,
+Brigadier-General of Volunteers, Commanding.
+
+Captain E. B. PARSONS,
+
+Assistant Adjutant-General.

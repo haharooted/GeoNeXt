@@ -1,0 +1,71 @@
+US and UK refuse to sign UN's communications treaty
+
+The US, Canada, Australia and UK have refused to sign an international communications treaty at an conference in Dubai.
+
+The countries had objected to calls for all states to have equal rights to the governance of the internet.
+
+But the breaking point was the addition of text relating to "human rights".
+
+It marks a setback for the UN's International Telecommunication Union (ITU) which had said it was sure it could deliver consensus.
+
+"It's with a heavy heart and a sense of missed opportunities that the US must communicate that it's not able to sign the agreement in the current form," said Terry Kramer the US ambassador to the World Conference on International Telecommunications (Wcit).
+
+"The internet has given the world unimaginable economic and social benefit during these past 24 years."
+
+Negotiators from Denmark, Italy, the Czech Republic, Sweden, Greece, Portugal, Finland, Chile, the Netherlands, New Zealand, Costa Rica and Kenya have said they would need to consult with their national governments about how to proceed and would also not be able to sign the treaty as planned on Friday.
+
+Censorship claims
+
+The ITU had organised the 12-day conference in order to revise a communications treaty last overhauled 24 years ago.
+
+It said the document would help nations co-ordinate efforts against spam and widen access to the web.
+
+However, much of the discussions ended up focusing on whether or not countries should have equal rights to the development of the internet's technical foundations.
+
+In particular many attendees believed it was an anachronism that the US government got to decide which body should regulate the net's address system as a legacy of its funding for Arpanet - a precursor to the internet which helped form its technical core.
+
+However, the US said this allowed it to ensure that technical experts could make "agile, rapid-fire decisions" about the net's development as part of multi-stakeholder organisations.
+
+It added that other references to net might also be used to legitimise censorship and other interference in the operation of internet service providers (ISPs) and cloud-based operations, such as Google and Facebook.
+
+Its view was supported by the internet and web pioneers Vint Cerf and Tim Berners-Lee who warned any changes posed a "disruptive threat to the stability of the system".
+
+Russian proposals
+
+A proposal from Russia, China, Saudi Arabia, Algeria and Sudan calling for equal rights for all governments to manage "internet numbering, naming, addressing and identification resources" was eventually shelved.
+
+But there was fresh controversy on Wednesday night after an alternative non-binding resolution was debated which suggested the UN agency's leadership should "continue to take the necessary steps for ITU to play an active and constructive role in the development of broadband and the multi-stakeholder model of the internet."
+
+This was opposed by the US and European nations who repeated their argument that the treaty's regulations should not stretch to internet governance.
+
+As debate continued into the early hours of Thursday morning the conference's chairman, Mohammed Nasser al-Ghanim asked for a "feel of the room" noting afterwards that the resolution had majority support, while stressing that this was not a formal "vote".
+
+Matters were also complicated by an African bloc of countries calling for a paragraph to be added to the treaty's preamble relating to human rights which stated that: "These regulations recognise the right of access of member states to international telecommunication services."
+
+The US and its allies suggested this as an attempt to extend the treaty's regulations to cover internet governance and content.
+
+'Bad agreement'
+
+After a break for sleep, Iran called for a vote on the African proposal which was carried by 77 votes to 33. This was in spite of the ITU's earlier pledge that disputed issues would only be resolved by consensus and not a majority vote.
+
+The organisation's secretary-general attempted to salvage discussions, but soon after the US, Canada and UK said they could no longer ratify the treaty.
+
+"My delegation came to work for revised international telecommunication regulations, but not at any cost," said the head of the UK delegation Simon Towler.
+
+"We prefer no resolution on the internet at all, and I'm extremely concerned that the language just adopted opens the possibility of internet and content issues."
+
+Despite this setback, the ITU's secretary-general Dr Hamadoun Toure insisted that those countries which did sign the treaty would benefit from other achievements including " increased transparency in international mobile roaming charges and competition".
+
+Stopping spam
+
+At a press conference on Friday the ITU said it was "puzzled" as to why countries had objected to the human rights text and denied there was an attempt to "hijack the internet".
+
+It highlighted a section that had been added to the treaty explicitly stating that it did not address content-related telecommunications.
+
+The final document published on Friday does refer to an aspiration that "all governments should have an equal role and responsibility for international internet governance".
+
+But the ITU stressed that this text was non-binding and only featured in the treaty's appendices following the US's efforts to exclude it from the main regulations.
+
+It also reflected on the fact that the main text does say that "member states should endeavour to take necessary measures to prevent the propagation of unsolicited bulk electronic communications," a reference to email spam and other unwanted messages.
+
+The ITU said that this was about finding technical solutions to parties sending "a million emails and flooding the pipes" rather than deciding what content should and should not be allowed to get through.
