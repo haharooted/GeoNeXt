@@ -1,5 +1,5 @@
 # GeoneXt
-
+![Showcase](/pictures/Excalidraw_Simple_GEONEXT_Background.png)
 ### Goal:
 - Given a news article or tweet, figure out locations in this tweet. Most approaches give one location, i think we want multiple. Toponym resolution is crucial for extracting geographic information from natural language texts, such as social media posts and news articles.
 
@@ -99,8 +99,14 @@ A geocoder is a large database with many addresses and place named indexed for s
     Geocoder based on OpenStreetMap
 
 
+- GeoLM 
+    BERT based, looks like
+    
+
 - Voting approach
-Multiple people have tried combining multiple existing toponymn recognition approaches, and getting good performance with using DBSCAN for voting.
+    Multiple people have tried combining multiple existing toponymn recognition approaches, and getting good performance with using DBSCAN for voting.
+
+
 
 ### Suggestions for evaluation metrics
 - Accuracy
