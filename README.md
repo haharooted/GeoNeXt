@@ -1,5 +1,6 @@
 # GeoneXt
-![Showcase](/pictures/Excalidraw_Simple_GEONEXT_Background.png)
+![Showcase](/pictures/Excalidraw_GEONEXT_3.png)
+
 ### Goal:
 - Given a news article or tweet, figure out locations in this tweet. Most approaches give one location, i think we want multiple. Toponym resolution is crucial for extracting geographic information from natural language texts, such as social media posts and news articles.
 
