@@ -6,14 +6,13 @@
 </p>
 
 <p align="center">
-  <!-- Shields.io badges -->
-  <a href="https://github.com/haharooted/GeoNeXt/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/haharooted/GeoNeXt?style=for-the-badge" alt="License: MIT">
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge" alt="Python 3.10+">
-  <img src="https://img.shields.io/github/actions/workflow/status/haharooted/GeoNeXt/ci.yml?branch=main&style=for-the-badge" alt="Build">
-  <img src="https://img.shields.io/github/issues/haharooted/GeoNeXt?style=for-the-badge" alt="Open Issues">
+    [![Mistral AI](https://img.shields.io/badge/Mistral%20AI-FA520F?logo=mistral-ai&logoColor=fff)](#)
+
+    [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
+
+    [![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#)
 </p>
+
 
 > **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts **_multiple_** locations from unstructured text and resolves each to precise coordinates—often down to **street‑level accuracy**.
 
