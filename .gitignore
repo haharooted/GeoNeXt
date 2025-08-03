@@ -6,3 +6,4 @@ data/ua-ru/
 **/.venv/
 **/venv/
 .env
+**/responses/
