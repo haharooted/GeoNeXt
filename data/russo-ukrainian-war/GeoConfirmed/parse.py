@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Stream‑convert a (possibly huge) KML file to GeoJSON,
+Stream-convert a (possibly huge) KML file to GeoJSON,
 keeping only <Placemark> elements that contain a <Point>.
 
 Usage:
@@ -15,7 +15,7 @@ NS = {"kml": "http://www.opengis.net/kml/2.2"}
 
 def sniff_encoding(fp: Path) -> str:
     """
-    Look at the first four bytes and guess UTF‑8‑SIG, UTF‑16‑LE/BE or fallback to UTF‑8.
+    Look at the first four bytes and guess UTF-8-SIG, UTF-16-LE/BE or fallback to UTF-8.
     """
     with fp.open("rb") as f:
         bom = f.read(4)
@@ -65,7 +65,7 @@ def convert(kml_path: str, geojson_path: str) -> None:
             elem.clear()      # free memory
     except ET.ParseError as e:
         # Keep whatever we managed to parse; warn the user.
-        print(f"⚠️  XML stopped being well‑formed at {e}. "
+        print(f"⚠️  XML stopped being well-formed at {e}. "
               f"Keeping {len(features)} features collected so far.", file=sys.stderr)
     finally:
         opened.close()

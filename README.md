@@ -1,140 +1,133 @@
-# GeoneXt
-![Showcase](/pictures/Excalidraw_GEONEXT_3.png)
 
-### Goal:
-- Given a news article or tweet, figure out locations in this tweet. Most approaches give one location, i think we want multiple. Toponym resolution is crucial for extracting geographic information from natural language texts, such as social media posts and news articles.
+# GeoNeXt
 
-### Broad categories:
-Geoparsing consists of two steps: toponym recognition, which is to recognize toponyms mentioned in texts, and toponym resolution or geocoding, which is to determine the geospatial representation or geo-coordinates of the toponyms.
-- Toponym recognition / Geoparsing
-- Toponym resolution / Geolocating/geocoding
+<p align="center">
+  <img src="pictures/Excalidraw_GEONEXT_3.png" alt="GeoNeXt Showcase" width="80%">
+</p>
 
-A geocoder is a large database with many addresses and place named indexed for search, examples:
-- Nominatim
-- Geonames
-- Photon
-- Pelias
-- (Proprietary) Google
-- (Proprietary) Bing
-- (Proprietary) Foursquare
+<p align="center">
+  <!-- Shields.io badges -->
+  <a href="https://github.com/haharooted/GeoNeXt/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/haharooted/GeoNeXt?style=for-the-badge" alt="License: MIT">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge" alt="Python 3.10+">
+  <img src="https://img.shields.io/github/actions/workflow/status/haharooted/GeoNeXt/ci.yml?branch=main&style=for-the-badge" alt="Build">
+  <img src="https://img.shields.io/github/issues/haharooted/GeoNeXt?style=for-the-badge" alt="Open Issues">
+</p>
 
+> **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts **_multiple_** locations from unstructured text and resolves each to precise coordinates—often down to **street‑level accuracy**.
 
+GeoNeXt ships in two flavours:
 
+| Repo | Purpose |
+|------|---------|
+| [`GeoNeXt`](https://github.com/haharooted/GeoNeXt) | Core LLM‑driven geoparser |
+| [`GeoNeXt‑MCP`](https://github.com/haharooted/GeoNeXt-MCP) | Plug‑&‑play **MCP** (Model Context Protocol) server that exposes GeoNeXt as an API/tool for *any* LLM |
 
-### Types of geocoding:
-- Mention-level geocoding (Single post)
-- Document-level geocoding (Twitter users, news)
+---
 
-### Datasets
-#### News Articles:
-- Local Global Lexicon
-    LGL19 (Local-Global Lexicon) corpus was created by Lieberman et al. (2010), containing 588 human-annotated news articles published by 78 local newspapers.
-- GeoWebNews
-    US focused, broader EU coverage
-    was created by Gritta et al. (2018a) from news articles collected from April 1st to 8th in 2018.
-- TR-News
-    EU, ME, East Asia, Australia
-    TR-News was created by Kamalloo and Rafiei (2018) from news articles of different sources.
-- TopRes19th
-    455 News articles in which places were manually annotated and linked to Wikipedia (mapped to Wikidata)
-- Hipe2020
-    News articles in English, French, German
-    Linked whenever possible to their corresponding Wikidata (and therefore locations)
-- AIDA
-- NEEL
-- WOTR
-- WikToR
-    WikToR was created by Gritta et al. (2018b) in an automatic manner, containing 5,000 Wikipedia articles with many ambiguous places, such as (Santa Maria, California), (Santa Maria, Bulacan), (Santa Maria, Ilocos Sur), and (Santa Maria, Romblon).
-- GeoVirus
-    GeoVirus was created by Gritta et al. (2018a), containing news articles about epidemics, such as Ebola and Swine Flu.
-- GeoCorpora
-    GeoCorpora was created by Wallgrün et al. (2018) containing tweets related to multiple events (e.g., ebola, flood, and rebel) that happened across the world in 2014 and 2015.
-    
-- CLDW
-- SemEval-2019
-- NCEN
+## Table&nbsp;of&nbsp;Contents
+1. [Key Features](#key-features)  
+2. [Why GeoNeXt?](#why-geonext)  
+3. [Quick Start](#quick-start)  
+4. [Datasets](#datasets)  
+5. [Approaches & Related Work](#approaches--related-work)  
+6. [Evaluation Metrics](#evaluation-metrics)  
+7. [Architecture](#architecture)  
+8. [Citation](#citation)  
+9. [Contributing](#contributing)  
+10. [License](#license)  
 
+---
 
-### Other approaches:
-- Edinburgh (Grover et al. 2010)
-    Rule-based extraction and disambiguation system developed by the Language Technology Group (LTG) at Edinburgh University. Provided code and API.
-    https://royalsocietypublishing.org/doi/10.1098/rsta.2010.0149
+## Key Features
+- **Multi‑LLM support** – works with OSS models (e.g.&nbsp;Mistral 7B) *and* proprietary giants (OpenAI o3‑pro).  
+- **Multiple toponyms per post** – no more “one‑location‑only” limitations.  
+- **Street‑level geocoding** via smart tool‑use + Gazetteer fusion.  
+- **Plug‑and‑play MCP server** (`GeoNeXt‑MCP`) for effortless tool‑calling.  
+- Ships with **two brand‑new evaluation datasets** (Danish *DKPol* & multilingual *UA‑RU*).  
 
-- Mordecai (Halterman, 2017)
-    Generate-and-rank approach that uses Elasticsearch to generate candidates and neural networks based on word2vec (Mikolov et al., 2013) -  trained on proprietary data
-    https://joss.theoj.org/papers/10.21105/joss.00091
+## Why GeoNeXt?
+Traditional pipelines treat toponym recognition and resolution as separate stages. GeoNeXt leverages recent reasoning‑capable LLMs to *jointly* understand context, disambiguate place names and call geocoding tools when needed—surpassing classic rule‑based and neural baselines while remaining fully explainable via tool logs.
 
-- CamCoder (Gritta et al., 2018)
-    Tile-classification approach that combines CNN over the target mention and 400 tokens of context with a population vector from location mentions in GeoNames, it then predicts one of 7823 tiles on the earth.
-    https://aclanthology.org/P18-1119.pdf
+## Quick Start
+```bash
+# Clone
+git clone https://github.com/haharooted/GeoNeXt.git
+cd GeoNeXt
 
-- DeezyMatch (Liu et al., 2021)
-    Vector-space approach that first pretrains a LSTM-based classifier on GeoNames taking string pairs as input and then fine-tunes the pair classifier on the target dataaset. It then compares mentions to database entries by generating vector representations for both and measuring their cosine similarity.
+# Create env
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 
-- SAPBERT (Liu et al., 2021)
-    Vector-space approach that pretrains a transformer network on the database using a self-alignment metric learning objective and online hard pairs mining to cluster synonyms of the same concept together and move different concepts further away, then its finetuned on the target dataset. Originally used for bio domain, but can be retrained for other domains.
-    https://arxiv.org/pdf/2010.11784
+# Run demo
+python demo.py --text "Protests erupted in Tivoli last night ..."
+```
 
-- BLINK (Wu et al., 2020b)
-    Entity Linking
+### Using the MCP server
+```bash
+git clone https://github.com/haharooted/GeoNeXt-MCP.git
+cd GeoNeXt-MCP
+docker compose up -d  # starts fastmcp + inspector
+```
 
-- GENRE (De Cao et al., 2021)
-    Entity lnker
+Once running, any agent‑enabled LLM can invoke the **geocode** tool exposed by GeoNeXt‑MCP.
 
-- ReFinED (Ayoola et al., 2022a)
-    Introduced a vector-space approach for joint extraction and disambiguation of Wikipedia entities. One transformer network generates contextualized embeddings for tokens in the text, another generates embeddings for entries in the ontology, and tokens are matched to entries by comparing dot products over embeddings. ReFinED was trained on Wikipedia, and Wikipedia entries for place names have GeoNames IDs, so ReFinED can be used as a geocoder.
+## Datasets
+| Category | Corpus | Scope |
+|----------|--------|-------|
+| **News** | LGL‑19 · GeoWebNews · TR‑News · TopRes19th · HIPE‑2020 | Local, global, historic |
+| **Wikipedia** | WikToR | 5 k ambiguous articles |
+| **Social Media** | GeoCorpora | 6 648 tweets (2014‑2015) |
+| **Crisis** | **NEW:** GeoNeXt‑DKPol · GeoNeXt‑UA‑RU | Homeland & foreign crisis mgmt |
 
-- GeoNorm (Zhang, et al., 2023)
-    a BERT-based transformer model is employed to rerank location candidates, using contextual embeddings to prioritise candidates that best match a toponym’s context.
+Full details in the [paper](#citation).
 
-- T-Res (Ardanuy, et. al., 2023)
-    BERT based approach
+## Approaches & Related Work
+<details>
+  <summary>Click to expand</summary>
 
-- LUKE
-    Entity disambiguation model based on BERT
+**Rule‑based / Classical**  
+- Edinburgh Geoparser (2010)  
+- Mordecai (2017)  
+- CamCoder (2018)  
+- ...
 
-- Adaptive Learning
-    Adaptive Learning is a random forest-based toponym resolution approach. 
+**Transformer / Entity‑linking**  
+- BLINK · GENRE · ReFinED · SAPBERT · DeezyMatch · GeoNorm · T‑Res · LUKE · Voting (DBSCAN)
 
-- Nominatim geocoder
-    Geocoder based on OpenStreetMap
+See the *Related Work* section of the paper for citations.
 
+</details>
 
-- GeoLM 
-    BERT based, looks like
-    
+## Evaluation Metrics
+- **Accuracy@161 km** (standard) & **Accuracy@500 m** (GeoNeXt zoom‑in)  
+- **Mean / Median Error Distance**  
+- **AUC of log‑binned error curve**  
+- **Coverage**  
 
-- Voting approach
-    Multiple people have tried combining multiple existing toponymn recognition approaches, and getting good performance with using DBSCAN for voting.
+> 👉 *All six metrics are reported per‑dataset for a holistic view.*
 
+## Architecture
+<p align="center">
+  <img src="pictures/Excalidraw_GEONEXT_3.png" alt="System architecture">
+</p>
 
+## Citation
+If you use GeoNeXt in academic work, please cite:
 
-### Suggestions for evaluation metrics
-- Accuracy
-Accuracy is the number of location mentions
-where the system predicted the correct database entry ID, divided by the number of location mentions.
-Higher is better, and a perfect model would have
-accuracy of 1.0.
+```bibtex
+@misc{nielsen2025geonext,
+  title   = {GeoNeXt: Achieving Beyond State‑of‑the‑Art Performance in Geolocating Unstructured Text},
+  author  = {ASD},
+  year    = {2025},
+  howpublished = {\url{https://github.com/haharooted/GeoNeXt}},
+}
+```
 
-- Accuracy@161km 
-Accuracy@161km measures the fraction of
-system-predicted (latitude, longitude) points that
-were less than 161 km (100 miles) away from
-the human-annotated (latitude, longitude) points.
-Higher is better, and a perfect model would have
-Accuracy@161km of 1.0.
+## Contributing
+Pull requests are welcome!  Please open an issue first to discuss major changes.  
+Make sure to run `pre‑commit` hooks and unit tests (`pytest`) before submitting.
 
-- Mean Error distance
-Mean error distance calculates the mean over
-all predictions of the distance between each systempredicted and human-annotated (latitude, longitude) point. Lower is better, and a perfect model
-would have a mean error distance of 0.0.
-
-- Area Under the Curve
-Area Under the Curve calculates the area under
-the curve of the distribution of geocoding error
-distances. Lower is better, and a perfect model
-would have an area under the curve of 0.0.
-
-
-
-
+## License
+GeoNeXt is released under the **MIT License**. See [`LICENSE`](LICENSE) for details.
