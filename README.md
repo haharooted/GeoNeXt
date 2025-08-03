@@ -46,7 +46,7 @@ GeoNeXt ships in two parts:
 - Ships with a **brand‑new evaluation dataset** (Multilingual *UA‑RU* ).  
 
 ## Why GeoNeXt?
-Traditional pipelines treat toponym recognition and resolution as separate stages. GeoNeXt leverages recent reasoning‑capable LLMs to *jointly* understand context, disambiguate place names and call geocoding tools when needed—surpassing classic rule‑based and NER based geolocation.
+Traditional pipelines treat toponym recognition and resolution as separate stages. GeoNeXt leverages recent reasoning‑capable LLMs to *jointly* understand context, disambiguate place names and call geocoding tools when needed, surpassing classic rule‑based and NER based geolocation.
 
 ## Quick Start
 ```bash
@@ -58,19 +58,20 @@ cd GeoNeXt
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
+cp .env.example .env # then add openai keys and MCP url here
+
 # Run app
 python cli.py 
 ```
 
 ### Using the MCP server
 ```bash
-Setup a fresh Ubuntu 24 server (i suggest Hetzner.com) with atleast 4GB RAM
-wget https://raw.githubusercontent.com/haharooted/GeoNeXt-MCP/refs/heads/main/deploy.sh
-bash deploy.sh
+# Setup a fresh Ubuntu 24 server (i suggest Hetzner.com) with atleast 4GB RAM, then run:
+wget https://raw.githubusercontent.com/haharooted/GeoNeXt-MCP/refs/heads/main/deploy.sh && bash deploy.sh
 ```
 For debugging:
 ```bash
-cd debugger && DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector
+bash ./debugger/start-debugger.sh
 ```
 
 Once running, any agent‑enabled LLM can invoke the **geocode** tool exposed by GeoNeXt‑MCP.
