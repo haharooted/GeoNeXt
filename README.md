@@ -13,14 +13,14 @@
 
 </div>
 
-> **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts **_multiple_** locations from unstructured text and resolves each to precise coordinates—often down to **street‑level accuracy**.
+> **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts locations from unstructured text and resolves each to precise coordinates—often down to street-level accuracy.
 
-GeoNeXt ships in two flavours:
+GeoNeXt ships in two parts:
 
 | Repo | Purpose |
 |------|---------|
 | [`GeoNeXt`](https://github.com/haharooted/GeoNeXt) | Core LLM‑driven geoparser |
-| [`GeoNeXt‑MCP`](https://github.com/haharooted/GeoNeXt-MCP) | Plug‑&‑play **MCP** (Model Context Protocol) server that exposes GeoNeXt as an API/tool for *any* LLM |
+| [`GeoNeXt‑MCP`](https://github.com/haharooted/GeoNeXt-MCP) | Plug‑&‑play **MCP** (Model Context Protocol) server that exposes GeoNeXt as an API/tool for any LLM supporting MCP tool use |
 
 ---
 
@@ -40,13 +40,13 @@ GeoNeXt ships in two flavours:
 
 ## Key Features
 - **Multi‑LLM support** – works with OSS models (e.g.&nbsp;Mistral 7B) *and* proprietary giants (OpenAI o3‑pro).  
-- **Multiple toponyms per post** – no more “one‑location‑only” limitations.  
-- **Street‑level geocoding** via smart tool‑use + Gazetteer fusion.  
+- **Multiple toponyms per post**
+- **Street‑level geocoding** via smart tool‑use + geocoding fusion.  
 - **Plug‑and‑play MCP server** (`GeoNeXt‑MCP`) for effortless tool‑calling.  
-- Ships with **two brand‑new evaluation datasets** (Danish *DKPol* & multilingual *UA‑RU*).  
+- Ships with a **brand‑new evaluation dataset** (Multilingual *UA‑RU* ).  
 
 ## Why GeoNeXt?
-Traditional pipelines treat toponym recognition and resolution as separate stages. GeoNeXt leverages recent reasoning‑capable LLMs to *jointly* understand context, disambiguate place names and call geocoding tools when needed—surpassing classic rule‑based and neural baselines while remaining fully explainable via tool logs.
+Traditional pipelines treat toponym recognition and resolution as separate stages. GeoNeXt leverages recent reasoning‑capable LLMs to *jointly* understand context, disambiguate place names and call geocoding tools when needed—surpassing classic rule‑based and NER based geolocation.
 
 ## Quick Start
 ```bash
@@ -58,15 +58,19 @@ cd GeoNeXt
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Run demo
-python demo.py --text "Protests erupted in Tivoli last night ..."
+# Run app
+python cli.py 
 ```
 
 ### Using the MCP server
 ```bash
-git clone https://github.com/haharooted/GeoNeXt-MCP.git
-cd GeoNeXt-MCP
-docker compose up -d  # starts fastmcp + inspector
+Setup a fresh Ubuntu 24 server (i suggest Hetzner.com) with atleast 4GB RAM
+wget https://raw.githubusercontent.com/haharooted/GeoNeXt-MCP/refs/heads/main/deploy.sh
+bash deploy.sh
+```
+For debugging:
+```bash
+cd debugger && DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector
 ```
 
 Once running, any agent‑enabled LLM can invoke the **geocode** tool exposed by GeoNeXt‑MCP.
