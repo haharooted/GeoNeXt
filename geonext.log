@@ -905,3 +905,69 @@ AttributeError: 'McpCall' object has no attribute 'content'
   "tweet": "Massive wildfire near Boulder!"
 }
 [16:01:14] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[16:54:48] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[16:54:48] INFO     geonext.pipeline | Resuming at index 0 / 2
+[16:54:48] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "PRINCE OF POT",
+  "case": "Marc Emery, known as Canada's 'Prince of Pot', was arrested in Montreal along with nine others during police raids on six newly opened Cannabis Culture stores. He faces charges of drug trafficking, possession for the purpose of trafficking, and conspiracy. Emery was released on a $5,000 bond with conditions: he must not consume cannabis, enter cannabis-related establishments, or contact anyone tied to Cannabis Culture in Montreal. He is barred from staying in Quebec except for court dates. Police are pressuring landlords to keep the stores closed, and officers were seen verifying that they remained shut."
+}
+[17:00:15] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[17:00:15] ERROR    geonext.pipeline | Provider failed on index 0: 'McpCall' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'content'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 78, in run
+    json_str = resp.output[-1].content[0].text
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'McpCall' object has no attribute 'content'
+[17:02:03] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[17:02:03] INFO     geonext.pipeline | Resuming at index 0 / 2
+[17:02:03] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "PRINCE OF POT",
+  "case": "Marc Emery, known as Canada's 'Prince of Pot', was arrested in Montreal along with nine others during police raids on six newly opened Cannabis Culture stores. He faces charges of drug trafficking, possession for the purpose of trafficking, and conspiracy. Emery was released on a $5,000 bond with conditions: he must not consume cannabis, enter cannabis-related establishments, or contact anyone tied to Cannabis Culture in Montreal. He is barred from staying in Quebec except for court dates. Police are pressuring landlords to keep the stores closed, and officers were seen verifying that they remained shut."
+}
+[17:02:44] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[17:02:44] INFO     openai._base_client | Retrying request to /responses in 0.401777 seconds
+[17:03:20] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[17:03:20] INFO     geonext.pipeline | Resuming at index 0 / 2
+[17:03:20] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "PRINCE OF POT",
+  "case": "Marc Emery, known as Canada's 'Prince of Pot', was arrested in Montreal along with nine others during police raids on six newly opened Cannabis Culture stores. He faces charges of drug trafficking, possession for the purpose of trafficking, and conspiracy. Emery was released on a $5,000 bond with conditions: he must not consume cannabis, enter cannabis-related establishments, or contact anyone tied to Cannabis Culture in Montreal. He is barred from staying in Quebec except for court dates. Police are pressuring landlords to keep the stores closed, and officers were seen verifying that they remained shut."
+}
+[17:05:46] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[17:05:46] ERROR    geonext.pipeline | Provider failed on index 0: 'McpCall' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'content'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 78, in run
+    json_str = resp.output[-1].content[0].text
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'McpCall' object has no attribute 'content'
