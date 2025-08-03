@@ -29,3 +29,879 @@ Traceback (most recent call last):
     resp = self.client.responses.create(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:16:33] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:16:33] INFO     geonext.pipeline | Resuming at index 2 / 2
+[13:18:22] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:18:22] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:18:23] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+[13:18:23] ERROR    geonext.openai | OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 50, in run
+    resp = self.client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1131, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+[13:18:23] ERROR    geonext.pipeline | Provider failed on index 0: OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 50, in run
+    resp = self.client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1131, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 65, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+[13:18:24] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+[13:18:24] ERROR    geonext.openai | OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 50, in run
+    resp = self.client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1131, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+[13:18:24] ERROR    geonext.pipeline | Provider failed on index 1: OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 50, in run
+    resp = self.client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1131, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 65, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Error code: 400 - {'error': {'message': "Invalid value: 'mcp'. Supported values are: 'function' and 'custom'.", 'type': 'invalid_request_error', 'param': 'tools[0].type', 'code': 'invalid_value'}}
+[13:23:45] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:23:45] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:23:45] ERROR    geonext.openai | OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:45] ERROR    geonext.pipeline | Provider failed on index 0: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:45] ERROR    geonext.openai | OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:45] ERROR    geonext.pipeline | Provider failed on index 1: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:57] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:23:57] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:23:57] ERROR    geonext.openai | OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:57] ERROR    geonext.pipeline | Provider failed on index 0: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:57] ERROR    geonext.openai | OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:23:57] ERROR    geonext.pipeline | Provider failed on index 1: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 24, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    raise RuntimeError(f"OpenAI provider failed: {exc}") from exc
+RuntimeError: OpenAI provider failed: Responses.create() got an unexpected keyword argument 'response_format'
+[13:27:46] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:27:46] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:27:52] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:27:52] INFO     openai._base_client | Retrying request to /responses in 0.407602 seconds
+[13:27:56] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:27:56] INFO     openai._base_client | Retrying request to /responses in 0.882634 seconds
+[13:28:01] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:28:01] ERROR    geonext.pipeline | Provider failed on index 0: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_e05a276f4e94533e0e258e7425414868 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 26, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 779, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_e05a276f4e94533e0e258e7425414868 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+[13:28:04] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:28:04] INFO     openai._base_client | Retrying request to /responses in 0.431448 seconds
+[13:29:36] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:29:36] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:29:37] ERROR    geonext.pipeline | Provider failed on index 0: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 31, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:29:37] ERROR    geonext.pipeline | Provider failed on index 1: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 31, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:29:51] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:29:51] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:29:55] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:29:55] INFO     openai._base_client | Retrying request to /responses in 0.422910 seconds
+[13:32:30] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:32:30] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:32:34] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:32:34] INFO     openai._base_client | Retrying request to /responses in 0.471209 seconds
+[13:32:38] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:32:38] INFO     openai._base_client | Retrying request to /responses in 0.780242 seconds
+[13:33:31] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:33:31] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:33:35] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:33:35] INFO     openai._base_client | Retrying request to /responses in 0.458200 seconds
+[13:34:13] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:34:13] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:34:17] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:34:17] INFO     openai._base_client | Retrying request to /responses in 0.455624 seconds
+[13:34:21] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:34:21] INFO     openai._base_client | Retrying request to /responses in 0.925229 seconds
+[13:34:25] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:34:25] ERROR    geonext.openai | OpenAIProvider run() failed:
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 27, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 779, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_4ade179c88e7d7593266f1a583516a64 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+
+[13:34:25] ERROR    geonext.pipeline | Provider failed on index 0: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_4ade179c88e7d7593266f1a583516a64 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 27, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 779, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_4ade179c88e7d7593266f1a583516a64 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+[13:34:47] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:34:47] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:34:56] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:34:56] ERROR    geonext.openai | OpenAIProvider run() failed:
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+[13:34:56] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:40:33] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:40:33] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:40:37] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 500 Internal Server Error"
+[13:40:37] INFO     openai._base_client | Retrying request to /responses in 0.473821 seconds
+[13:40:49] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:40:49] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:40:57] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:40:57] ERROR    geonext.openai | OpenAIProvider run() failed:
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+[13:40:57] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:41:32] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:41:32] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:41:40] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:41:40] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:43:36] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:43:36] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:43:36] DEBUG    geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[13:43:36] DEBUG    openai._base_client | Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-e9c11b37-f972-4484-b447-4b3ff8ee3376', 'json_data': {'input': '{\n  "id": 1,\n  "headline": "Google opens R&D hub in Toronto",\n  "body": "Officials in Toronto confirmed the project..."\n}', 'instructions': "You are *GeoNeXt*, an expert geopolitical agent.\nTask: read the user document, extract every UNIQUE, real-world location (city, town, address, landmark, region, country). For each you must:\n  • Call the provided geocoding tools (via MCP) **one location at a time**;\n  • Append the country/state to the query when obvious (e.g. 'Odense' → 'Odense, Denmark');\n  • If multiple geocoder candidates are returned, reason over the context     and pick the best, otherwise refine the query (max 2 extra tries).\n  • Drop exact duplicates (same lat/lon ±1\u202fm).\n  • Produce ONLY JSON that validates against the schema the tool call     specifies. If no places found, output [] and nothing else.", 'model': 'gpt-4o-mini', 'temperature': 0, 'tool_choice': 'auto', 'tools': [{'type': 'mcp', 'server_url': 'https://95-216-143-131.sslip.io/sse', 'server_label': 'default', 'require_approval': 'never'}]}}
+[13:43:36] DEBUG    openai._base_client | Sending HTTP Request: POST https://api.openai.com/v1/responses
+[13:43:36] DEBUG    httpcore.connection | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+[13:43:36] DEBUG    httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1061b7380>
+[13:43:36] DEBUG    httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x105afc2d0> server_hostname='api.openai.com' timeout=5.0
+[13:43:36] DEBUG    httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x105b96b40>
+[13:43:36] DEBUG    httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+[13:43:36] DEBUG    httpcore.http11 | send_request_headers.complete
+[13:43:36] DEBUG    httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+[13:43:36] DEBUG    httpcore.http11 | send_request_body.complete
+[13:43:36] DEBUG    httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+[13:43:44] DEBUG    httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 11:43:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9998'), (b'x-ratelimit-remaining-tokens', b'198346'), (b'x-ratelimit-reset-requests', b'12.981s'), (b'x-ratelimit-reset-tokens', b'496ms'), (b'openai-version', b'2020-10-01'), (b'openai-organization', b'user-xtqe0ucc4ywr7lettvwq4ahn'), (b'openai-project', b'proj_hYSy86IULb60myAcQMVs140D'), (b'x-request-id', b'req_6f1aff740f65936b270b62d9031deb3f'), (b'openai-processing-ms', b'7925'), (b'x-envoy-upstream-service-time', b'7934'), (b'x-envoy-decorator-operation', b'tasksapi.openai.svc.cluster.local:8081/*'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=M.mkJALG7h_nGP_nbAQWeH1F3PqLAJ0A.qb5fQ_DD0A-1754221424-1.0.1.1-K5FRk2RiQX9I_IroNb1AWKeTntJXK7DEiL1mmJ81FOFSyIEGbtt3GzMfdvdil0O9W4w8.rX6nca9dR2wu0RaFkHszFrxshAxlFthNtoa2RI; path=/; expires=Sun, 03-Aug-25 12:13:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=3p5kueR3ejpFB2XiU3eWkX4YACjg95iq_uBRvQyO0V0-1754221424926-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96958eee0dd6ebc6-CPH'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+[13:43:44] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:43:44] DEBUG    httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+[13:43:44] DEBUG    httpcore.http11 | receive_response_body.complete
+[13:43:44] DEBUG    httpcore.http11 | response_closed.started
+[13:43:44] DEBUG    httpcore.http11 | response_closed.complete
+[13:43:44] DEBUG    openai._base_client | HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Sun, 03 Aug 2025 11:43:44 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9998'), ('x-ratelimit-remaining-tokens', '198346'), ('x-ratelimit-reset-requests', '12.981s'), ('x-ratelimit-reset-tokens', '496ms'), ('openai-version', '2020-10-01'), ('openai-organization', 'user-xtqe0ucc4ywr7lettvwq4ahn'), ('openai-project', 'proj_hYSy86IULb60myAcQMVs140D'), ('x-request-id', 'req_6f1aff740f65936b270b62d9031deb3f'), ('openai-processing-ms', '7925'), ('x-envoy-upstream-service-time', '7934'), ('x-envoy-decorator-operation', 'tasksapi.openai.svc.cluster.local:8081/*'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=M.mkJALG7h_nGP_nbAQWeH1F3PqLAJ0A.qb5fQ_DD0A-1754221424-1.0.1.1-K5FRk2RiQX9I_IroNb1AWKeTntJXK7DEiL1mmJ81FOFSyIEGbtt3GzMfdvdil0O9W4w8.rX6nca9dR2wu0RaFkHszFrxshAxlFthNtoa2RI; path=/; expires=Sun, 03-Aug-25 12:13:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=3p5kueR3ejpFB2XiU3eWkX4YACjg95iq_uBRvQyO0V0-1754221424926-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '96958eee0dd6ebc6-CPH'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+[13:43:44] DEBUG    openai._base_client | request_id: req_6f1aff740f65936b270b62d9031deb3f
+[13:43:45] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:43:45] DEBUG    geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[13:43:45] DEBUG    openai._base_client | Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-7cd20486-c05f-4bbe-bf81-99afa2c595e1', 'json_data': {'input': '{\n  "id": 2,\n  "tweet": "Massive wildfire near Boulder!"\n}', 'instructions': "You are *GeoNeXt*, an expert geopolitical agent.\nTask: read the user document, extract every UNIQUE, real-world location (city, town, address, landmark, region, country). For each you must:\n  • Call the provided geocoding tools (via MCP) **one location at a time**;\n  • Append the country/state to the query when obvious (e.g. 'Odense' → 'Odense, Denmark');\n  • If multiple geocoder candidates are returned, reason over the context     and pick the best, otherwise refine the query (max 2 extra tries).\n  • Drop exact duplicates (same lat/lon ±1\u202fm).\n  • Produce ONLY JSON that validates against the schema the tool call     specifies. If no places found, output [] and nothing else.", 'model': 'gpt-4o-mini', 'temperature': 0, 'tool_choice': 'auto', 'tools': [{'type': 'mcp', 'server_url': 'https://95-216-143-131.sslip.io/sse', 'server_label': 'default', 'require_approval': 'never'}]}}
+[13:43:45] DEBUG    openai._base_client | Sending HTTP Request: POST https://api.openai.com/v1/responses
+[13:43:45] DEBUG    httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+[13:43:45] DEBUG    httpcore.http11 | send_request_headers.complete
+[13:43:45] DEBUG    httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+[13:43:45] DEBUG    httpcore.http11 | send_request_body.complete
+[13:43:45] DEBUG    httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+[13:43:47] DEBUG    httpcore.http11 | receive_response_headers.failed exception=KeyboardInterrupt()
+[13:43:47] DEBUG    httpcore.http11 | response_closed.started
+[13:43:47] DEBUG    httpcore.http11 | response_closed.complete
+[13:44:12] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:44:12] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:44:12] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[13:44:21] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:44:21] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:44:21] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[13:47:21] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:47:21] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:47:21] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[13:47:35] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:47:35] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 35, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:47:35] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[13:48:23] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:48:23] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:48:23] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[13:48:31] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[13:48:31] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[13:48:31] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[14:24:32] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:24:33] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:24:33] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:24:39] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:24:40] ERROR    geonext.pipeline | Provider failed on index 0: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    return json.loads(resp.output_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[14:34:48] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:34:48] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:34:48] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:34:56] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:34:57] ERROR    geonext.pipeline | Provider failed on index 0: name 're' is not defined
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 36, in run
+    json_str = extract_json(resp.output_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/utils.py", line 10, in extract_json
+    match = re.search(r"```(?:json)?\s*(\[.*?\])\s*```", text, re.DOTALL)
+            ^^
+NameError: name 're' is not defined. Did you forget to import 're'
+[14:35:05] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:35:05] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:35:05] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:35:28] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:35:29] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[14:35:44] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:44:47] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:44:47] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:44:47] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:44:47] ERROR    geonext.pipeline | Provider failed on index 0: Responses.create() got an unexpected keyword argument 'text_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 30, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'text_format'
+[14:49:54] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:49:54] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:49:54] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:50:47] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:50:47] ERROR    geonext.pipeline | Provider failed on index 0: 'Response' object has no attribute 'output_parsed'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'output_parsed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 39, in run
+    print(resp.output_parsed)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Response' object has no attribute 'output_parsed'
+[14:52:11] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[14:52:11] INFO     geonext.pipeline | Resuming at index 0 / 2
+[14:52:11] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[14:52:33] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[14:52:33] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[14:52:50] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:16:17] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:16:17] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:16:17] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:16:22] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:16:22] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:17:35] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:17:35] ERROR    geonext.pipeline | Provider failed on index 1: 'McpCall' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'content'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 39, in run
+    json_str = resp.output[-1].content[0].text
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'McpCall' object has no attribute 'content'
+[15:31:53] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:31:53] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:31:53] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:32:05] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:32:05] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:34:32] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:34:32] ERROR    geonext.pipeline | Provider failed on index 1: 'McpCall' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 983, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'content'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 29, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 40, in run
+    json_str = resp.output[-1].content[0].text
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/.venv/lib/python3.12/site-packages/pydantic/main.py", line 985, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'McpCall' object has no attribute 'content'
+[15:34:47] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:34:47] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:34:47] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:34:52] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:34:52] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:35:16] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:36:07] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:36:07] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:36:07] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:36:12] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:36:12] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:36:40] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:37:00] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:37:00] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:37:00] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:37:05] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:37:05] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:37:35] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:39:44] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:39:44] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:39:44] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:39:51] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:39:51] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:43:59] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:43:59] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:43:59] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:46:12] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:46:12] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:46:12] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:47:42] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:47:42] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:47:42] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:48:59] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:48:59] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:48:59] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:49:27] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:49:27] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:50:58] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:50:58] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:50:58] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:55:22] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:55:22] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:55:34] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:55:34] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:55:34] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:56:07] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:56:07] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:58:56] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[15:58:56] INFO     geonext.pipeline | Resuming at index 0 / 2
+[15:58:56] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[15:59:20] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[15:59:20] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[15:59:46] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[16:00:29] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[16:00:29] INFO     geonext.pipeline | Resuming at index 0 / 2
+[16:00:29] INFO     geonext.pipeline | Processing item 0:
+{
+  "id": 1,
+  "headline": "Google opens R&D hub in Toronto",
+  "body": "Officials in Toronto confirmed the project..."
+}
+[16:00:43] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[16:00:43] INFO     geonext.pipeline | Processing item 1:
+{
+  "id": 2,
+  "tweet": "Massive wildfire near Boulder!"
+}
+[16:01:14] INFO     httpx | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
