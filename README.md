@@ -5,14 +5,13 @@
   <img src="pictures/Excalidraw_GEONEXT_3.png" alt="GeoNeXt Showcase" width="80%">
 </p>
 
-<p align="center">
-    [![Mistral AI](https://img.shields.io/badge/Mistral%20AI-FA520F?logo=mistral-ai&logoColor=fff)](#)
+<div align="center">
 
-    [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
+[![Mistral AI](https://img.shields.io/badge/Mistral%20AI-FA520F?logo=mistral-ai&logoColor=fff)](#)
+[![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
+[![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#)
 
-    [![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#)
-</p>
-
+</div>
 
 > **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts **_multiple_** locations from unstructured text and resolves each to precise coordinates—often down to **street‑level accuracy**.
 
