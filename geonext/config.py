@@ -1,8 +1,8 @@
-from dotenv import load_dotenv
-load_dotenv()           # now .env is honoured automatically
 from __future__ import annotations
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # MCP / Geocoder
 MCP_URL         = os.getenv("MCP_URL", "http://localhost:8000/mcp/")

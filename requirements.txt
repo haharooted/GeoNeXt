@@ -1,5 +1,5 @@
 fastmcp>=2.11.0
-openai>=1.14.0
+openai>=1.98.0
 mistralai>=0.1.8
 tqdm>=4.66
 rich>=13.7

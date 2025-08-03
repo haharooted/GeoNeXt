@@ -13,7 +13,7 @@
 
 </div>
 
-> **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts locations from unstructured text and resolves each to precise coordinates—often down to street-level accuracy.
+> **GeoNeXt** is a state‑of‑the‑art, LLM‑powered geoparsing framework that extracts locations from unstructured text and resolves each to precise coordinates, often down to street-level accuracy.
 
 GeoNeXt ships in two parts:
 

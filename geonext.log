@@ -1,0 +1,31 @@
+[13:12:46] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:12:46] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:12:46] ERROR    geonext.pipeline | Provider failed on index 0: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 20, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:13:08] INFO     geonext.cli | GeoNeXt 0.3.1 – provider=openai
+[13:13:08] INFO     geonext.pipeline | Resuming at index 0 / 2
+[13:13:09] ERROR    geonext.pipeline | Provider failed on index 0: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 20, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
+[13:13:09] ERROR    geonext.pipeline | Provider failed on index 1: Responses.create() got an unexpected keyword argument 'response_format'
+Traceback (most recent call last):
+  File "/Users/jkatz/git/geonext/geonext/pipeline.py", line 28, in run_pipeline
+    locs = provider.run(text=text)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jkatz/git/geonext/geonext/providers/openai_provider.py", line 20, in run
+    resp = self.client.responses.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Responses.create() got an unexpected keyword argument 'response_format'
