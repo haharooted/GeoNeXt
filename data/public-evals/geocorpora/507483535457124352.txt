@@ -1,0 +1,1 @@
+@Tarfugaming hello i just wanted to let you know the 11th riot kayle skin is invalid, u got a type error in there, "WWGPLHKHJD4RGF"

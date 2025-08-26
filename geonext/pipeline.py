@@ -1,5 +1,5 @@
 from __future__ import annotations
-import json, logging, itertools
+import json, logging
 from pathlib import Path
 from geonext.utils import deep_to_str
 from geonext.config import FLUSH_EVERY, STOP_ON_ERROR
@@ -12,7 +12,7 @@ def run_pipeline(*,
                  provider,
                  out_path: Path):
 
-    results = []
+    results: list[dict] = []
     if out_path.exists():                         # resume
         results = json.loads(out_path.read_text())
 
@@ -29,16 +29,20 @@ def run_pipeline(*,
             locs = provider.run(text=text)
         except Exception as exc:
             log.exception("Provider failed on index %s: %s", idx, exc)
-            if STOP_ON_ERROR==1:
+            if STOP_ON_ERROR == 1:
                 raise
             locs = {"error": str(exc)}
 
-        results.append(locs)
+        # attach the geolocation results back onto the original item
+        item['geolocation'] = locs
+        results.append(item)
 
+        # periodically flush partial results back out
         if (idx + 1) % FLUSH_EVERY == 0:
             out_path.write_text(json.dumps(results, indent=2, ensure_ascii=False))
 
         bar.update(1)
 
+    # final write
     out_path.write_text(json.dumps(results, indent=2, ensure_ascii=False))
     bar.close()

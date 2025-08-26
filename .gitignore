@@ -7,3 +7,4 @@ data/ua-ru/
 **/venv/
 .env
 **/responses/
+geonext.log

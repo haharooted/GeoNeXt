@@ -1,0 +1,1 @@
+Android account passwords are stored on disk in plain text http://j.mp/ckgOzI

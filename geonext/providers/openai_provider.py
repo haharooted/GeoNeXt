@@ -22,7 +22,7 @@ class OpenAIProvider:
     developers can inspect them later.
     """
 
-    MODEL = "gpt-4o-mini"  # any responses‑capable model
+    MODEL = "o4-mini-2025-04-16"  # any responses‑capable model
 
     def __init__(self) -> None:
         self.client = openai.OpenAI()
